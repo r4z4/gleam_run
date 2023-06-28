@@ -3,11 +3,12 @@ import gleam/result
 import gleam/string
 
 pub fn to_rna(dna: String) -> Result(String, Nil) {
-    dna 
-    |> string.to_graphemes 
-    |> list.try_map(transcribe)
-    |> result.map(string.concat)
+  dna
+  |> string.to_graphemes
+  |> list.try_map(transcribe)
+  |> result.map(string.concat)
 }
+
 fn transcribe(nucleotide: String) {
   case nucleotide {
     "G" -> Ok("C")

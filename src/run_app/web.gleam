@@ -42,9 +42,13 @@ fn hello(name) {
 }
 
 fn test() {
-  let reply = 
-    string.concat(["Hello on a beautiful", " ", time.now() |> time.string_weekday()]) 
-
+  let reply =
+    string.concat([
+      "Hello on a beautiful",
+      " ",
+      time.now()
+      |> time.string_weekday(),
+    ])
   response.new(200)
   |> response.set_body(bit_string.from_string(reply))
   |> response.prepend_header("content-type", "text/plain")
